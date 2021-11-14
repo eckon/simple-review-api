@@ -1,11 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Post,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Collection } from './collection.entity';
 import { CollectionService } from './collection.service';
@@ -31,7 +24,7 @@ export class CollectionController {
     // in case an id was set, check if this collection really exists
     // we do not want to allow the user to set their own uuid
     if (body.id) {
-      const result = await this.collectionService.findOne(body.id);
+      await this.collectionService.findOne(body.id);
     }
 
     return await this.collectionService.save(body);

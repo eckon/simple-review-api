@@ -30,7 +30,7 @@ export class ReviewController {
     // in case an id was set, check if this review really exists
     // we do not want to allow the user to set their own uuid
     if (body.id) {
-      const result = await this.reviewService.findOne(body.id);
+      await this.reviewService.findOne(body.id);
     }
 
     const result = await this.reviewService.save({ collection, ...body });
