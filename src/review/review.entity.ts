@@ -12,32 +12,32 @@ export class Review {
   id?: string;
 
   /**
-    * @example "Pizza Place"
-  */
+   * @example "Pizza Place"
+   */
   @Column()
   reviewee: string;
 
   /**
-    * @example "Niklas Meyer"
-  */
+   * @example "Niklas Meyer"
+   */
   @Column()
   reviewer: string;
 
   /**
-    * @example "Pizza Salami"
-  */
+   * @example "Pizza Salami"
+   */
   @Column()
   item: string;
 
   /**
-    * @example 5
-  */
+   * @example 5
+   */
   @Column()
   rating: number;
 
   /**
-    * @example "okay but soggy"
-  */
+   * @example "okay but soggy"
+   */
   @Column()
   comment: string;
 
