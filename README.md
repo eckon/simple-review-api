@@ -1,5 +1,11 @@
 # Simple Review API
 
+
+## API Documentation
+
+A swagger documentation can be found under `/api`
+
+
 ## IDEAS
 
 - use token for all authentication
