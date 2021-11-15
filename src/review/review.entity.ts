@@ -7,18 +7,33 @@ export class Review {
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
+  /**
+    * @example "Pizza Place"
+  */
   @Column()
   reviewee: string;
 
+  /**
+    * @example "Niklas Meyer"
+  */
   @Column()
   reviewer: string;
 
+  /**
+    * @example "Pizza Salami"
+  */
   @Column()
   item: string;
 
+  /**
+    * @example 5
+  */
   @Column()
   rating: number;
 
+  /**
+    * @example "okay but soggy"
+  */
   @Column()
   comment: string;
 

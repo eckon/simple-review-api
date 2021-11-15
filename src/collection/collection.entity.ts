@@ -3,13 +3,22 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Collection {
-  // this will also be used as the access token
+  /**
+   * uuid
+   * @example "d3b71a51-dabd-4f3b-93b7-a9ccb1047dd8"
+   */
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
+  /**
+   * @example "Food Reviews"
+   */
   @Column()
   title: string;
 
+  /**
+   * @example "this includes all food reviews from Niklas"
+   */
   @Column()
   description: string;
 
