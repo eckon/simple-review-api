@@ -1,6 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
 import { Collection } from '../collection/collection.entity';
 import { CollectionService } from '../collection/collection.service';
 import { ReviewController } from './review.controller';
@@ -61,7 +60,6 @@ describe('ReviewController', () => {
 
       expect(result).toEqual(oneReview);
     });
-
 
     // this test sadly does not really do anything (the check is always mocked so its always correct)
     it('should update with id', async () => {
