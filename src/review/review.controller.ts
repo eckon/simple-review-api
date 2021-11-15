@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { CollectionService } from 'src/collection/collection.service';
+import { CollectionService } from '../collection/collection.service';
 import { DeleteReviewParams } from './dto/delete-review-params.dto';
 import { GetReviewParams } from './dto/get-review-params.dto';
 import { SaveReviewDto } from './dto/save-review.dto';

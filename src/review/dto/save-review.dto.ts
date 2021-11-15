@@ -28,6 +28,8 @@ export class SaveReviewDto {
   item: string;
 
   /**
+   * Rating that has to be between 0 and 5
+   *
    * @example 5
    */
   @IsInt()
