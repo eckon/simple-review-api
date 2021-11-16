@@ -2,9 +2,9 @@ import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Collection } from './collection.entity';
 import { CollectionService } from './collection.service';
-import { DeleteCollectionParams } from './dto/delete-collection-params.dto';
-import { GetCollectionParams } from './dto/get-collection-params.dto';
 import { SaveCollectionDto } from './dto/save-collection.dto';
+import { UUIDParam } from './dto/uuid-param.dto';
+import { CollectionCompletions } from './interfaces/completions.interface';
 
 @ApiTags('collection')
 @Controller('collection')
@@ -12,7 +12,7 @@ export class CollectionController {
   constructor(private readonly collectionService: CollectionService) {}
 
   @Get(':id')
-  async get(@Param() params: GetCollectionParams): Promise<Collection> {
+  async get(@Param() params: UUIDParam): Promise<Collection> {
     return await this.collectionService.findOne(params.id);
   }
 
@@ -31,7 +31,16 @@ export class CollectionController {
   }
 
   @Delete(':id')
-  async delete(@Param() params: DeleteCollectionParams): Promise<Collection> {
+  async delete(@Param() params: UUIDParam): Promise<Collection> {
     return await this.collectionService.remove(params.id);
+  }
+
+  @Get(':id/completions')
+  async completions(
+    @Param() params: UUIDParam,
+  ): Promise<CollectionCompletions> {
+    const reviewers = await this.collectionService.findReviewers(params.id);
+
+    return { reviewers };
   }
 }

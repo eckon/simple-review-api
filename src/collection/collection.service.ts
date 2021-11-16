@@ -35,4 +35,14 @@ export class CollectionService {
 
     return toDelete;
   }
+
+  async findReviewers(id: string): Promise<string[]> {
+    const result = await this.findOne(id);
+
+    // remove duplicate values
+    const reviewersSet = new Set<string>();
+    result.reviews.forEach((review) => reviewersSet.add(review.reviewee));
+
+    return [...reviewersSet];
+  }
 }
