@@ -8,7 +8,7 @@ import { ReviewModule } from './review/review.module';
     // TODO: this needs to handle local and production environments
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: process.env.DATABASE_URL || 'localhost',
       port: 5432,
       username: 'root',
       password: 'root',
