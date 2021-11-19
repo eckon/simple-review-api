@@ -53,3 +53,15 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+
+# Dev
+
+
+## Structure
+
+- `Collection` have multiple `Reviews` that describe a common thing (food review, hotel review, etc.)
+  - these will allow a connection between multiple `Reviews`, meaning that two Reviewers are always different entities, when they are not in the same collection (even if they are the same in reality)
+- `Review` is one rating for a specific thing, it will be connected to other `Reviews` via a `Collection`
+- Additional meta data like completions etc. are linked by the `Collection`
+  - meaning if we want to get all possible already created Reviewers for a new `Review` then this can only be achieved by requesting the data from the `Collection` which internally requests different data from the `Reviews`
