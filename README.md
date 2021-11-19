@@ -5,14 +5,10 @@
 
 A swagger documentation can be found under `/api`
 
+## Usage
 
-## IDEAS
-
-- use token for all authentication
-  - resulting in less secure structure for now but easy access for everyone
-- use heroku for db and for backend
-  - use relation db like postgres probably with typeorm
-- use unit tests and e2e tests
+- create a `Collection` and link all the reviews to the created `Collection`
+- no authentication is needed, "safety" is given by collections being hidden
 
 
 ## Installation
@@ -63,5 +59,5 @@ $ npm run test:cov
 - `Collection` have multiple `Reviews` that describe a common thing (food review, hotel review, etc.)
   - these will allow a connection between multiple `Reviews`, meaning that two Reviewers are always different entities, when they are not in the same collection (even if they are the same in reality)
 - `Review` is one rating for a specific thing, it will be connected to other `Reviews` via a `Collection`
-- Additional meta data like completions etc. are linked by the `Collection`
+- additional meta data like completions etc. are linked by the `Collection`
   - meaning if we want to get all possible already created Reviewers for a new `Review` then this can only be achieved by requesting the data from the `Collection` which internally requests different data from the `Reviews`
