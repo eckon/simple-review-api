@@ -7,17 +7,17 @@ import { Collection } from './entities/collection.entity';
 const reviewOne: Omit<Review, 'collection'> = {
   item: 'Pizza',
   rating: 3,
-  comment: 'its okay',
-  reviewee: 'Niklas',
-  reviewer: 'Pizza Place',
+  comment: 'okay',
+  reviewer: 'Niklas',
+  reviewee: 'Pizza Place',
 };
 
 const reviewTwo: Omit<Review, 'collection'> = {
   item: 'Fries',
   rating: 2,
   comment: 'soggy',
-  reviewee: 'Laura',
-  reviewer: 'Pizza Place',
+  reviewer: 'Laura',
+  reviewee: 'Fries Place',
 };
 
 const oneCollection: Collection = {
@@ -72,22 +72,29 @@ describe('CollectionService', () => {
     expect(service).toBeDefined();
   });
 
-  describe('findReviewers', () => {
+  // functions are wrapped by same utility, meaning one call tests all of them
+  describe('findReviewAttribute', () => {
     it('should return correct array', async () => {
-      const result = await service.findReviewers('fake');
+      const resultReviewers = await service.findReviewers('fake');
+      expect(resultReviewers).toEqual(['Niklas', 'Laura']);
 
-      expect(result).toEqual(['Niklas', 'Laura']);
+      const resultReviewees = await service.findReviewees('fake');
+      expect(resultReviewees).toEqual(['Pizza Place', 'Fries Place']);
+
+      const resultItems = await service.findItems('fake');
+      expect(resultItems).toEqual(['Pizza', 'Fries']);
+
+      const resultComments = await service.findComments('fake');
+      expect(resultComments).toEqual(['okay', 'soggy']);
     });
 
     it('should return correct array even with duplicates', async () => {
       const result = await service.findReviewers('multiple');
-
       expect(result).toEqual(['Niklas', 'Laura']);
     });
 
     it('should return empty array when no data', async () => {
       const result = await service.findReviewers('no data');
-
       expect(result).toEqual([]);
     });
   });
