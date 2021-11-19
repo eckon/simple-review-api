@@ -11,7 +11,9 @@ export class ReviewService {
   ) {}
 
   async findOne(id: string): Promise<Review> {
-    const result = await this.reviewRepository.findOne(id);
+    const result = await this.reviewRepository.findOne(id, {
+      relations: ['collection'],
+    });
 
     if (!result) {
       throw new HttpException(

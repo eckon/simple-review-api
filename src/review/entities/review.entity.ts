@@ -41,7 +41,6 @@ export class Review {
   @Column()
   comment: string;
 
-  @ApiHideProperty()
   @ManyToOne(() => Collection, (collection: Collection) => collection.reviews, {
     onDelete: 'CASCADE',
   })
