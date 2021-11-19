@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { Review } from '../review/review.entity';
-import { Collection } from './collection.entity';
+import { Review } from '../review/entities/review.entity';
 import { CollectionService } from './collection.service';
+import { Collection } from './entities/collection.entity';
 
 const reviewOne: Omit<Review, 'collection'> = {
   item: 'Pizza',

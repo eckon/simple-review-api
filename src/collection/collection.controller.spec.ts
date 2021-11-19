@@ -3,8 +3,8 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Review } from '../review/entities/review.entity';
 import { ReviewService } from '../review/review.service';
 import { CollectionController } from './collection.controller';
-import { Collection } from './collection.entity';
 import { CollectionService } from './collection.service';
+import { Collection } from './entities/collection.entity';
 
 describe('CollectionController', () => {
   let controller: CollectionController;

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { Review } from './review.entity';
+import { Review } from './entities/review.entity';
 import { ReviewService } from './review.service';
 
 describe('ReviewService', () => {

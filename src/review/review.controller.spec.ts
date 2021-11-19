@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { Collection } from '../collection/collection.entity';
 import { CollectionService } from '../collection/collection.service';
+import { Collection } from '../collection/entities/collection.entity';
+import { Review } from './entities/review.entity';
 import { ReviewController } from './review.controller';
-import { Review } from './review.entity';
 import { ReviewService } from './review.service';
 
 const oneCollection: Collection = {
