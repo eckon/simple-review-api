@@ -1,9 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CollectionService } from '../collection/collection.service';
-import { DeleteReviewParams } from './dto/delete-review-params.dto';
-import { GetReviewParams } from './dto/get-review-params.dto';
 import { SaveReviewDto } from './dto/save-review.dto';
+import { UUIDParam } from './dto/uuid-param-review.dto';
 import { Review } from './entities/review.entity';
 import { ReviewService } from './review.service';
 
@@ -16,7 +15,7 @@ export class ReviewController {
   ) {}
 
   @Get(':id')
-  async get(@Param() params: GetReviewParams): Promise<Review> {
+  async get(@Param() params: UUIDParam): Promise<Review> {
     return await this.reviewService.findOne(params.id);
   }
 
@@ -38,7 +37,7 @@ export class ReviewController {
   }
 
   @Delete(':id')
-  async delete(@Param() params: DeleteReviewParams): Promise<Review> {
+  async delete(@Param() params: UUIDParam): Promise<Review> {
     return await this.reviewService.remove(params.id);
   }
 }
