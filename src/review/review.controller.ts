@@ -4,7 +4,7 @@ import { CollectionService } from '../collection/collection.service';
 import { DeleteReviewParams } from './dto/delete-review-params.dto';
 import { GetReviewParams } from './dto/get-review-params.dto';
 import { SaveReviewDto } from './dto/save-review.dto';
-import { Review } from './review.entity';
+import { Review } from './entities/review.entity';
 import { ReviewService } from './review.service';
 
 @ApiTags('review')

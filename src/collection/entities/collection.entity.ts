@@ -1,5 +1,5 @@
-import { Review } from '../review/review.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Review } from '../../review/entities/review.entity';
 
 @Entity()
 export class Collection {

@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { Collection } from './collection.entity';
 import { CollectionService } from './collection.service';
 import { SaveCollectionDto } from './dto/save-collection.dto';
 import { UUIDParam } from './dto/uuid-param.dto';
+import { Collection } from './entities/collection.entity';
 import { CollectionCompletions } from './interfaces/completions.interface';
 
 @ApiTags('collection')

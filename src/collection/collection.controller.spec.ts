@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { Review } from '../review/review.entity';
+import { Review } from '../review/entities/review.entity';
 import { ReviewService } from '../review/review.service';
 import { CollectionController } from './collection.controller';
 import { Collection } from './collection.entity';

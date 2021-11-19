@@ -1,6 +1,6 @@
 import { ApiHideProperty } from '@nestjs/swagger';
-import { Collection } from '../collection/collection.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Collection } from '../../collection/entities/collection.entity';
 
 @Entity()
 export class Review {
