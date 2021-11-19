@@ -54,6 +54,17 @@ $ npm run test:cov
 # Dev
 
 
+## Heroku
+
+The backend is being hosted by heroku. It uses ci/cd to generate and deploy it. Also the database is hosted on heroku.
+Some parts of the repository are only for the heroku implementation.
+
+These are mainly for the start of the application and how to connect to the heroku database.
+
+- [Procfile](./Procfile)
+  - tells heroku the entry point of the application
+
+
 ## Structure
 
 - `Collection` have multiple `Reviews` that describe a common thing (food review, hotel review, etc.)
