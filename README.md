@@ -3,7 +3,9 @@
 
 ## API Documentation
 
-A swagger documentation can be found under `/api`
+A swagger documentation can be found under `/docs`
+
+The live endpoint can be found under `https://simple-review-api.herokuapp.com/docs/`
 
 ## Usage
 
