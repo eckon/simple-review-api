@@ -40,7 +40,10 @@ export class CollectionController {
     @Param() params: UUIDParam,
   ): Promise<CollectionCompletions> {
     const reviewers = await this.collectionService.findReviewers(params.id);
+    const reviewees = await this.collectionService.findReviewees(params.id);
+    const items = await this.collectionService.findItems(params.id);
+    const comments = await this.collectionService.findComments(params.id);
 
-    return { reviewers };
+    return { reviewers, reviewees, items, comments };
   }
 }
