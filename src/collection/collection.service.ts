@@ -1,6 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { Review } from '../review/entities/review.entity';
 import { Collection } from './entities/collection.entity';
 
 @Injectable()
@@ -37,11 +38,31 @@ export class CollectionService {
   }
 
   async findReviewers(id: string): Promise<string[]> {
+    return this.findReviewAttribute(id, 'reviewer');
+  }
+
+  async findReviewees(id: string): Promise<string[]> {
+    return this.findReviewAttribute(id, 'reviewee');
+  }
+
+  async findItems(id: string): Promise<string[]> {
+    return this.findReviewAttribute(id, 'item');
+  }
+
+  async findComments(id: string): Promise<string[]> {
+    return this.findReviewAttribute(id, 'comment');
+  }
+
+  // TODO: would like the attribute type to be bound to Review
+  async findReviewAttribute(
+    id: string,
+    attribute: 'reviewer' | 'reviewee' | 'item' | 'comment',
+  ): Promise<string[]> {
     const result = await this.findOne(id);
 
     // remove duplicate values
     const reviewersSet = new Set<string>();
-    result.reviews.forEach((review) => reviewersSet.add(review.reviewee));
+    result.reviews.forEach((review) => reviewersSet.add(review[attribute]));
 
     return [...reviewersSet];
   }
