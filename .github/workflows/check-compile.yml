@@ -1,10 +1,10 @@
-name: Test
+name: Check compilation
 on:
   push:
     branches: [ master ]
 
 jobs:
-  checks:
+  compile:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +17,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Unit-tests
-        run: npm run test
-
-      # - name: Run e2e-test
-        # run: npm run test:e2e
+      - name: Check compilation
+        run: npm run build

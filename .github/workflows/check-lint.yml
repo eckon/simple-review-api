@@ -1,10 +1,10 @@
-name: Check
+name: Check linting
 on:
   push:
     branches: [ master ]
 
 jobs:
-  checks:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check formatting
-        run: npm run format:check
-
       - name: Check linting
         run: npm run lint:check
 
-      - name: Check compilation
-        run: npm run build
