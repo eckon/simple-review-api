@@ -1,11 +1,15 @@
 # Simple Review API
 
+[![check workflow](https://github.com/eckon/simple-review-api/actions/workflows/check.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/check.yml)
+[![test workflow](https://github.com/eckon/simple-review-api/actions/workflows/test.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/test.yml)
+
 
 ## API Documentation
 
 A swagger documentation can be found under `/docs`
 
 The live endpoint can be found under `https://simple-review-api.herokuapp.com/docs/`
+
 
 ## Usage
 
