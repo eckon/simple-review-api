@@ -1,7 +1,9 @@
 # Simple Review API
 
-[![check workflow](https://github.com/eckon/simple-review-api/actions/workflows/check.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/check.yml)
-[![test workflow](https://github.com/eckon/simple-review-api/actions/workflows/test.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/test.yml)
+[![check-lint workflow](https://github.com/eckon/simple-review-api/actions/workflows/check-lint.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/check-lint.yml)
+[![check-format workflow](https://github.com/eckon/simple-review-api/actions/workflows/check-format.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/check-format.yml)
+[![check-compile workflow](https://github.com/eckon/simple-review-api/actions/workflows/check-compile.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/check-compile.yml)
+[![run-test workflow](https://github.com/eckon/simple-review-api/actions/workflows/run-test.yml/badge.svg)](https://github.com/eckon/simple-review-api/actions/workflows/run-test.yml)
 
 
 ## API Documentation
